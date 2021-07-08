@@ -15,7 +15,7 @@
     //missing_debug_implementations,
     //missing_copy_implementations,
     unused_import_braces,
-    //unused_crate_dependencies,
+    unused_crate_dependencies
 )]
 //#![allow(incomplete_features)]
 //#[allow(unstable_features)]

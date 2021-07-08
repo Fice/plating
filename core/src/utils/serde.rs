@@ -53,5 +53,7 @@ pub use DeserializeTrait as DeserializeEx;
 #[cfg(not(feature = "serde"))]
 pub trait SerializeTrait {}
 
+//always 'use' it here, so we do not get unused dependency warnings.
+use noop_proc_macro as _;
 #[cfg(not(feature = "serde"))]
 pub use noop_proc_macro::{Deserialize, Serialize};

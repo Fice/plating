@@ -38,7 +38,7 @@ serde = { version = "^1.0", features = ["derive", "rc"], optional = true }
 [target.'cfg(target_os = "macos")'.dependencies]
 #fruity = { version = "^0.2", features = ["foundation"] }
 
-cocoa = { version = "^0.24" }
+#cocoa = { version = "^0.24" }
 #core-foundation = { version = "^0.9" }
 #objc = { version = "^0.2" }
 #block = { version = "0.1.6" }
