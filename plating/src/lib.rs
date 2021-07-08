@@ -31,8 +31,6 @@
 /// Useful for logging and debugging purposes.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-pub use plating_core::*;
-
 ///////////////////////////////////
 //Platform specific implementations
 ///////////////////////////////////
@@ -43,6 +41,7 @@ pub use plating_core::*;
 #[doc(alias = "mac")]
 #[doc(alias = "osx")]
 pub use cocoa;
+pub use plating_core::*;
 #[cfg(any(feature = "plating_systems", all(doc, not(doctest))))]
 #[cfg_attr(doc, doc(cfg(feature = "plating_systems")))]
 #[doc(inline)]
