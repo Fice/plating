@@ -50,8 +50,6 @@
 #![allow(incomplete_features)]
 #![feature(generic_associated_types)]
 #![feature(associated_type_defaults)]
-#![feature(trivial_bounds)]
-#![feature(inherent_associated_types)]
 #![feature(doc_cfg)]
 #![feature(doc_notable_trait)]
 

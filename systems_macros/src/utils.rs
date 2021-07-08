@@ -107,7 +107,6 @@ pub(crate) mod r#where {
     pub(crate) fn add_all_have_clause(
         mut where_clause: WhereClause,
         ty: &TraitItemType,
-        tag_name: Path,
     ) -> WhereClause {
         let mut all_have_bound = Punctuated::new();
         all_have_bound.push(TypeParamBound::Trait(TraitBound {
@@ -116,13 +115,17 @@ pub(crate) mod r#where {
             lifetimes: None,
             path: super::available_name(&ty.ident).into(),
         }));
+        let mut self_path: Path = Ident::new("Self", Span::call_site()).into();
+        self_path
+            .segments
+            .push(Ident::new("Tag", Span::call_site()).into());
         where_clause
             .predicates
             .push(WherePredicate::Type(PredicateType {
                 lifetimes:   None,
                 bounded_ty:  syn::Type::Path(TypePath {
                     qself: None,
-                    path:  tag_name,
+                    path:  self_path,
                 }),
                 colon_token: syn::token::Colon {
                     spans: [Span::call_site()],

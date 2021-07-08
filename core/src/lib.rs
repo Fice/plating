@@ -17,8 +17,6 @@
     unused_import_braces,
     unused_crate_dependencies
 )]
-//#![allow(incomplete_features)]
-//#[allow(unstable_features)]
 //#![cfg_attr(feature = "template-specialization", feature(specialization))]
 
 #[cfg(feature = "serde")]

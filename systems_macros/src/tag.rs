@@ -28,14 +28,14 @@ use syn::{
 use crate::utils::r#where::{add_all_have_clause, add_has_bound, new_where_clause};
 use crate::utils::{definition_name_for_path, has_name, tag_name};
 
-fn adjust_trait_item(mut ty: TraitItemType, tag_name: Path) -> TraitItemType {
+fn adjust_trait_item(mut ty: TraitItemType) -> TraitItemType {
     let mut where_clause = ty
         .generics
         .where_clause
         .clone()
         .unwrap_or_else(new_where_clause);
     where_clause = add_has_bound(where_clause, &ty);
-    where_clause = add_all_have_clause(where_clause, &ty, tag_name);
+    where_clause = add_all_have_clause(where_clause, &ty);
 
     ty.generics.where_clause = Some(where_clause);
     ty
@@ -118,7 +118,7 @@ pub fn tag(attr: TokenStream, item: TokenStream) -> TokenStream {
         .items
         .iter()
         .map(|item| match item.clone() {
-            TraitItem::Type(ty) => TraitItem::Type(adjust_trait_item(ty, tag_name.clone().into())),
+            TraitItem::Type(ty) => TraitItem::Type(adjust_trait_item(ty)),
             item => item,
         })
         .collect();

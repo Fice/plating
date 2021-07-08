@@ -21,7 +21,6 @@
 )]
 #![allow(incomplete_features)]
 #![feature(generic_associated_types)]
-#![feature(proc_macro_diagnostic)]
 
 //! Macros used by the plating_systems crate.
 //!
