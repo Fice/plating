@@ -5,11 +5,14 @@
 
 use std::marker::PhantomData;
 
+#[allow(unused_imports)] //depending on features, some of these traits might be unused
 use plating_core::utils::outlet::{ChildrenOutlet, MenuOutlet, Outlet, OutletHolder};
 use plating_core::utils::{Deserialize, Serialize};
+#[allow(unused_imports)] //depending on features, some of these traits might be unused
 use plating_core::widgets::{Button, Window};
 
 use crate::systems::{SystemDefinition, SystemsList};
+#[allow(unused_imports)] //depending on features, some of these traits might be unused
 use crate::types::{ButtonAvailable, HasButton, HasWindow, WindowAvailable};
 use crate::{default_widgets, tag};
 
