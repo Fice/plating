@@ -226,3 +226,12 @@ pub fn build_widget_list(item: TokenStream) -> TokenStream {
 use plating_core as _;
 #[cfg(test)]
 use plating_systems as _;
+
+
+//These md files will be included when running doc tests.
+//that way, all rust codeblocks in these md files will be tested.
+#[cfg(doctest)]
+doc_comment::doctest!("../README.md", readme);
+
+#[cfg(test)]
+use doc_comment as _; //get rid of "not using doc_comment" warning

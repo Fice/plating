@@ -21,6 +21,7 @@ proc-macro2 = "^1.0"
 [dev-dependencies]
 plating_systems = {path = "../systems", version = "0.0.1" }
 plating_core = {path = "../core", version = "0.0.1" }
+doc-comment = "0.3"
 
 [package.metadata.docs.rs]
 all-features = true
