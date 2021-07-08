@@ -89,7 +89,7 @@ mod utils;
 /// - `ButtonAvailable`: An empty trait used by 'SystemDefinition's to indicate
 ///   they support Buttons.
 /// - `AllHaveButton`: An empty trait that has an automatic implementation for
-///   'Tags's where all 'SystemDefinition's support Buttons (i.e. implement the
+///   'Tags' where all 'SystemDefinition's support Buttons (i.e. implement the
 ///   'ButtonAvailable' Trait).
 /// - `HasTrait`: A trait that needs to be implemented for a System. Only has
 ///   one type Definition equal to the input type of the macro. In above example
