@@ -52,7 +52,7 @@ pub use tuple_list::{tuple_list as systems_list, TupleList as SystemsList};
 ///   availability for all Systems in a
 ///   [systems_list](`crate::systems::systems_list`).
 /// - [`crate::marker`] if you want to create your own 'HasFoo' Trait.
-#[doc(notable_trait)]
+#[cfg_attr(doc, doc(notable_trait))]
 pub trait SystemDefinition {}
 
 #[allow(rustdoc::missing_doc_code_examples)]
@@ -108,7 +108,7 @@ where
 /// [`SystemDefinition`] available via [`System::Definition`].
 ///
 /// See [`SystemDefinition`] for more information.
-#[doc(notable_trait)]
+#[cfg_attr(doc, doc(notable_trait))]
 pub trait System {
     /// The [`SystemDefinition`] that describes this System
     type Definition: SystemDefinition;

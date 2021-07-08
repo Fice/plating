@@ -17,7 +17,7 @@ use crate::types::{ButtonAvailable, WindowAvailable};
 /// Contains the `FooAvailable` Trait implementations for all Widgets natively
 /// supported on WinUI3.
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "winui3"))]
+#[cfg_attr(doc, doc(cfg(feature = "winui3")))]
 pub struct WinUI3Definition {}
 impl SystemDefinition for WinUI3Definition {}
 
@@ -36,8 +36,8 @@ impl WindowAvailable for WinUI3Definition {}
 /// # See also
 /// See [`WinUI3Definition`] for the corresponding [`SystemDefinition`].
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "winui3"))]
-#[doc(cfg(target_os = "windows"))]
+#[cfg_attr(doc, doc(cfg(feature = "winui3")))]
+#[cfg_attr(doc, doc(cfg(target_os = "windows")))]
 #[cfg(any(target_os = "windows", doc))]
 #[doc(alias = "Windows")]
 pub struct WinUI3 {}

@@ -17,7 +17,7 @@ use crate::types::ButtonAvailable;
 ///
 /// See [`IOS`] for the [System](`crate::systems::System`).
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "ios"))]
+#[cfg_attr(doc, doc(cfg(feature = "ios")))]
 pub struct IOSDefinition {}
 impl SystemDefinition for IOSDefinition {}
 
@@ -34,8 +34,8 @@ impl ButtonAvailable for IOSDefinition {}
 ///
 /// # See also
 /// See [`IOSDefinition`] for the corresponding [`SystemDefinition`].
-#[doc(cfg(feature = "ios"))]
-#[doc(cfg(target_os = "ios"))]
+#[cfg_attr(doc, doc(cfg(feature = "ios")))]
+#[cfg_attr(doc, doc(cfg(target_os = "ios")))]
 #[cfg(any(target_os = "ios", doc))]
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
 pub struct IOS {}

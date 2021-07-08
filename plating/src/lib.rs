@@ -23,29 +23,32 @@
     unused_import_braces,
     unused_crate_dependencies
 )]
-#![allow(incomplete_features)]
-#![feature(doc_cfg)]
+//Nightly required for docs
+#![cfg_attr(doc, feature(doc_cfg))]
 
 /// Constant representing the version of plating.
 ///
 /// Useful for logging and debugging purposes.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
+pub use plating_core::*;
 
-#[cfg(any(feature = "cocoa", doc))]
-#[doc(cfg(feature = "cocoa"))]
+///////////////////////////////////
+//Platform specific implementations
+///////////////////////////////////
+#[cfg(any(feature = "cocoa", all(doc, not(doctest))))]
+#[cfg_attr(doc, doc(cfg(feature = "cocoa")))]
 #[doc(inline)]
 #[doc(alias = "apple")]
 #[doc(alias = "mac")]
 #[doc(alias = "osx")]
 pub use cocoa;
-pub use plating_core::*;
-#[cfg(any(feature = "plating_systems", doc))]
-#[doc(cfg(feature = "plating_systems"))]
+#[cfg(any(feature = "plating_systems", all(doc, not(doctest))))]
+#[cfg_attr(doc, doc(cfg(feature = "plating_systems")))]
 #[doc(inline)]
 pub use plating_systems::*;
-#[cfg(any(feature = "win_ui3", doc))]
-#[doc(cfg(feature = "win_ui3"))]
+#[cfg(any(feature = "win_ui3", all(doc, not(doctest))))]
+#[cfg_attr(doc, doc(cfg(feature = "win_ui3")))]
 #[doc(inline)]
 #[doc(alias = "windows")]
 pub use win_ui3;

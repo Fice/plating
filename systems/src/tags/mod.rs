@@ -101,7 +101,7 @@ impl<Sys> TagTrait for Tag<Sys> where Sys: SystemsList + SystemDefinition {}
          crate::systems::Mock,
     )
 )]
-#[doc(notable_trait)]
+#[cfg_attr(doc, doc(notable_trait))]
 pub trait All {}
 
 
@@ -136,7 +136,7 @@ pub trait Tier2 {}
 )]
 /// A [`Tag`] representing the Desktop systems supported by default
 /// by plating.
-#[doc(notable_trait)]
+#[cfg_attr(doc, doc(notable_trait))]
 pub trait Desktop {}
 
 
@@ -153,5 +153,5 @@ pub trait Desktop {}
 )]
 /// A [`Tag`] representing the Mobile systems supported by default
 /// by plating.
-#[doc(notable_trait)]
+#[cfg_attr(doc, doc(notable_trait))]
 pub trait Mobile {}

@@ -17,7 +17,7 @@ use crate::types::{ButtonAvailable, WindowAvailable};
 ///
 /// See [`Android`] for the [System](`crate::systems::System`).
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "android"))]
+#[cfg_attr(doc, doc(cfg(feature = "android")))]
 pub struct AndroidDefinition {}
 impl SystemDefinition for AndroidDefinition {}
 
@@ -35,8 +35,8 @@ impl WindowAvailable for AndroidDefinition {}
 ///
 /// # See also
 /// See [`AndroidDefinition`] for the corresponding [`SystemDefinition`].
-#[doc(cfg(feature = "android"))]
-#[doc(cfg(target_os = "android"))]
+#[cfg_attr(doc, doc(cfg(feature = "android")))]
+#[cfg_attr(doc, doc(cfg(target_os = "android")))]
 #[cfg(any(target_os = "android", doc))]
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
 pub struct Android {}

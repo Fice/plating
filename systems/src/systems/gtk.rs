@@ -18,7 +18,7 @@ use crate::types::{ButtonAvailable, WindowAvailable};
 /// See: [`GTK`] for the corresponding [System](`crate::systems::System`).
 /// For QT see [`super::QTDefinition`].
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "gtk"))]
+#[cfg_attr(doc, doc(cfg(feature = "gtk")))]
 pub struct GTKDefinition {}
 impl SystemDefinition for GTKDefinition {}
 
@@ -38,8 +38,8 @@ impl WindowAvailable for GTKDefinition {}
 /// # See also
 /// See [`GTKDefinition`] for the corresponding [`SystemDefinition`].
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "gtk"))]
-#[doc(cfg(target_os = "linux"))]
+#[cfg_attr(doc, doc(cfg(feature = "gtk")))]
+#[cfg_attr(doc, doc(cfg(target_os = "linux")))]
 #[cfg(any(target_os = "linux", doc))]
 #[doc(alias = "Linux")]
 pub struct GTK {}

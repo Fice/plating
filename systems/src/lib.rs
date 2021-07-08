@@ -50,8 +50,10 @@
 #![allow(incomplete_features)]
 #![feature(generic_associated_types)]
 #![feature(associated_type_defaults)]
-#![feature(doc_cfg)]
-#![feature(doc_notable_trait)]
+//Nightly required for docs
+#![cfg_attr(doc, feature(doc_cfg))]
+#![cfg_attr(doc, feature(doc_notable_trait))]
+
 
 #[cfg(feature = "serde")]
 extern crate serde;

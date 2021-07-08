@@ -20,7 +20,8 @@
     unused_import_braces,
     unused_crate_dependencies
 )]
-#![feature(doc_cfg)]
+//Nightly required for docs
+#![cfg_attr(doc, feature(doc_cfg))]
 
 use plating_core as _;
 

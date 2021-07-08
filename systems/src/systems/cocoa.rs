@@ -23,7 +23,7 @@ use crate::types::{HasButton, HasWindow};
 /// Contains the `FooAvailable` Trait implementations for all Widgets natively
 /// supported on Mac.
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "cocoa"))]
+#[cfg_attr(doc, doc(cfg(feature = "cocoa")))]
 pub struct CocoaDefinition {}
 
 impl SystemDefinition for CocoaDefinition {}
@@ -43,8 +43,8 @@ impl WindowAvailable for CocoaDefinition {}
 /// # See also
 /// See [`CocoaDefinition`] for the corresponding [`SystemDefinition`].
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "cocoa"))]
-#[doc(cfg(target_os = "macos"))]
+#[cfg_attr(doc, doc(cfg(feature = "cocoa")))]
+#[cfg_attr(doc, doc(cfg(target_os = "macos")))]
 #[cfg(any(target_os = "macos", doc))]
 #[doc(alias = "Mac")]
 #[doc(alias = "Osx")]

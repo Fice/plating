@@ -17,7 +17,7 @@ use crate::types::{ButtonAvailable, HasButton, HasWindow, WindowAvailable};
 /// Contains the `FooAvailable` Trait implementations for all Widgets supported
 /// by the [`Mock`] System.
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "mock"))]
+#[cfg_attr(doc, doc(cfg(feature = "mock")))]
 pub struct MockDefinition {}
 impl SystemDefinition for MockDefinition {}
 
@@ -36,7 +36,7 @@ impl WindowAvailable for MockDefinition {}
 ///
 /// TODO: A lot
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash)]
-#[doc(cfg(feature = "mock"))]
+#[cfg_attr(doc, doc(cfg(feature = "mock")))]
 pub struct Mock {}
 impl System for Mock {
     type Definition = MockDefinition;
