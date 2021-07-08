@@ -17,12 +17,12 @@ echo '+cargo fmt'
 cargo fmt --all -- --check
 
 # Run tests of the main project as well as the subprojects
-echo '+cargo test --all'
+echo '+cargo test'
 cargo test --all --no-fail-fast --quiet
 
 
 # run clippy
-echo '+cargo clippy --all -- -D warnings'
+echo '+cargo clippy'
 cargo clippy --all-targets --all-features --workspace -- -D warnings
 
 # check licences of dependencies are valid
@@ -31,7 +31,7 @@ cargo lichking check
 
 
 # check outdated dependencies
-echo '+cargo outdated --root-deps-only --exit-code -1'
+echo '+cargo outdated'
 cargo outdated --root-deps-only
     #--exit-code -1
 #cargo outdated --root-deps-only --manifest-path uuid-macro/cargo.toml
